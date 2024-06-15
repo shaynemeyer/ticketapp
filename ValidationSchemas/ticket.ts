@@ -6,3 +6,5 @@ export const ticketSchema = z.object({
   status: z.string().min(1, "Status").max(10).optional(),
   priority: z.string().min(1, "Priority").max(10).optional(),
 });
+
+export type TicketFormData = z.infer<typeof ticketSchema>;
