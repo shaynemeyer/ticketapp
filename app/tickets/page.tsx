@@ -4,8 +4,21 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import Pagination from "@/components/Pagination";
 
-const Tickets = async () => {
-  const tickets = await prisma.ticket.findMany();
+interface SearchParams {
+  page: string;
+}
+
+const Tickets = async ({ searchParams }: { searchParams: SearchParams }) => {
+  const pageSize = 10;
+  const page = parseInt(searchParams.page) || 1;
+  const skip = (page - 1) * pageSize;
+
+  const tickets = await prisma.ticket.findMany({
+    take: pageSize,
+    skip,
+  });
+
+  const ticketCount = await prisma.ticket.count();
 
   return (
     <div className="w-full mt-5">
@@ -20,7 +33,11 @@ const Tickets = async () => {
       <div className="rounded-md sm:border">
         <DataTable tickets={tickets} />
       </div>
-      <Pagination itemCount={50} pageSize={5} currentPage={1} />
+      <Pagination
+        itemCount={ticketCount}
+        pageSize={pageSize}
+        currentPage={page}
+      />
     </div>
   );
 };
