@@ -15,6 +15,7 @@ A simple example of a ticketing application written in NextJS/TypeScript.
 - [Shadcn/ui](https://ui.shadcn.com/) - Components
   - [Badge](https://ui.shadcn.com/docs/components/badge)
   - [Button](https://ui.shadcn.com/docs/components/button)
+  - [Card](https://ui.shadcn.com/docs/components/card)
   - [Data Table](https://ui.shadcn.com/docs/components/data-table)
   - [Form](https://ui.shadcn.com/docs/components/form)
   - [Input](https://ui.shadcn.com/docs/components/input) 

@@ -18,8 +18,15 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { Ticket } from "@prisma/client";
 
-const TicketForm = () => {
+const apiUrl = "/api/tickets";
+
+interface Props {
+  ticket?: Ticket;
+}
+
+const TicketForm = ({ ticket }: Props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -32,7 +39,13 @@ const TicketForm = () => {
     try {
       setIsSubmitting(true);
       setError("");
-      await axios.post("/api/tickets", values);
+
+      if (ticket) {
+        await axios.patch(`${apiUrl}/${ticket.id}`, values);
+      } else {
+        await axios.post(apiUrl, values);
+      }
+
       router.push("/tickets");
       router.refresh();
     } catch (error) {
@@ -53,6 +66,7 @@ const TicketForm = () => {
           <FormField
             control={form.control}
             name="title"
+            defaultValue={ticket?.title}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Ticket Title</FormLabel>
@@ -65,6 +79,7 @@ const TicketForm = () => {
 
           <Controller
             name="description"
+            defaultValue={ticket?.description}
             render={({ field }) => (
               <SimpleMDE placeholder="Description" {...field} />
             )}
@@ -74,6 +89,7 @@ const TicketForm = () => {
             <FormField
               control={form.control}
               name="status"
+              defaultValue={ticket?.status}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Status</FormLabel>
@@ -99,6 +115,7 @@ const TicketForm = () => {
             <FormField
               control={form.control}
               name="priority"
+              defaultValue={ticket?.priority}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Priority</FormLabel>
@@ -122,7 +139,7 @@ const TicketForm = () => {
             />
           </div>
           <Button type="submit" disabled={isSubmitting}>
-            Submit
+            {ticket ? "Update Ticket" : "Create Ticket"}
           </Button>
         </form>
       </Form>
