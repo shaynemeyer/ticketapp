@@ -14,14 +14,33 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { Button } from "./ui/button";
+import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const TicketForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const router = useRouter();
+
   const form = useForm<TicketFormData>({
     resolver: zodResolver(ticketSchema),
   });
 
   async function handleOnSubmit(values: TicketFormData) {
-    console.log(values);
+    try {
+      setIsSubmitting(true);
+      setError("");
+      await axios.post("/api/tickets", values);
+      router.push("/tickets");
+      router.refresh();
+    } catch (error) {
+      console.log(error);
+      setError("Unknown error occurred");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -102,6 +121,9 @@ const TicketForm = () => {
               )}
             />
           </div>
+          <Button type="submit" disabled={isSubmitting}>
+            Submit
+          </Button>
         </form>
       </Form>
     </div>

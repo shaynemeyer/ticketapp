@@ -5,6 +5,7 @@ A simple example of a ticketing application written in NextJS/TypeScript.
 ---
 ## Dependencies
 
+- [Axios](https://axios-http.com/docs/intro) - HTTP Requests
 - [NextJS/TypeScript](https://nextjs.org/) - App framework
 - [React Hook Form](https://www.react-hook-form.com/) - Forms
   - [Hookform Resolvers](https://www.npmjs.com/package/@hookform/resolvers) - enables using zod for validation of form data.
