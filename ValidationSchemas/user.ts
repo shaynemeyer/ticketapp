@@ -11,3 +11,5 @@ export const userSchema = z.object({
     .or(z.literal("")),
   role: z.string().min(3, "Role is required").max(10),
 });
+
+export type UserFormData = z.infer<typeof userSchema>;
