@@ -10,6 +10,7 @@ A simple example of a ticketing application written in NextJS/TypeScript.
 - [React Hook Form](https://www.react-hook-form.com/) - Forms
   - [Hookform Resolvers](https://www.npmjs.com/package/@hookform/resolvers) - enables using zod for validation of form data.
     - [Resolver documentation](https://react-hook-form.com/docs/useform#resolver)
+- [React Markdown](https://www.npmjs.com/package/react-markdown) - Viewing Markdown
 - [React SimpleMDE (EasyMDE) Markdown Editor](https://www.npmjs.com/package/react-simplemde-editor)
   - [EasyMDE Markdown Editor](https://www.npmjs.com/package/easymde)
 - [Shadcn/ui](https://ui.shadcn.com/) - Components
