@@ -2,6 +2,7 @@ import prisma from "@/prisma/db";
 import DataTable from "./DataTable";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import Pagination from "@/components/Pagination";
 
 const Tickets = async () => {
   const tickets = await prisma.ticket.findMany();
@@ -16,10 +17,10 @@ const Tickets = async () => {
           New Ticket
         </Link>
       </div>
-
       <div className="rounded-md sm:border">
         <DataTable tickets={tickets} />
       </div>
+      <Pagination itemCount={50} pageSize={5} currentPage={1} />
     </div>
   );
 };
