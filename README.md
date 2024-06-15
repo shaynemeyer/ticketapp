@@ -14,6 +14,7 @@ A simple example of a ticketing application written in NextJS/TypeScript.
 - [React SimpleMDE (EasyMDE) Markdown Editor](https://www.npmjs.com/package/react-simplemde-editor)
   - [EasyMDE Markdown Editor](https://www.npmjs.com/package/easymde)
 - [Shadcn/ui](https://ui.shadcn.com/) - Components
+  - [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) 
   - [Badge](https://ui.shadcn.com/docs/components/badge)
   - [Button](https://ui.shadcn.com/docs/components/button)
   - [Card](https://ui.shadcn.com/docs/components/card)

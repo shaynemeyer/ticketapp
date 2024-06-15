@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -138,9 +138,19 @@ const TicketForm = ({ ticket }: Props) => {
               )}
             />
           </div>
-          <Button type="submit" disabled={isSubmitting}>
-            {ticket ? "Update Ticket" : "Create Ticket"}
-          </Button>
+          <div className="flex gap-2">
+            <Button type="submit" disabled={isSubmitting}>
+              {ticket ? "Update Ticket" : "Create Ticket"}
+            </Button>
+            <Button
+              className={buttonVariants({
+                variant: "secondary",
+              })}
+              onClick={() => router.push("/tickets")}
+            >
+              Cancel
+            </Button>
+          </div>
         </form>
       </Form>
     </div>

@@ -13,6 +13,7 @@ import { formatDateForDisplay } from "@/lib/formats";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import Markdown from "react-markdown";
+import DeleteButton from "./DeleteButton";
 
 interface Props {
   ticket: Ticket;
@@ -48,14 +49,7 @@ const TicketDetail = ({ ticket }: Props) => {
         >
           Edit Ticket
         </Link>
-        <Link
-          href={`/tickets/edit/${ticket.id}`}
-          className={`${buttonVariants({
-            variant: "destructive",
-          })}`}
-        >
-          Delete Ticket
-        </Link>
+        <DeleteButton ticketId={ticket.id} />
       </div>
     </div>
   );
