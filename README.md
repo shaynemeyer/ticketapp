@@ -3,11 +3,24 @@
 A simple example of a ticketing application written in NextJS/TypeScript.
 
 ---
+
+## TODOS
+
+- `[ISSUE]` -> fix issue with last user assigned still showing up as assigned in the Assign Ticket
+- `[DOCS]` -> Add documentation and detailed walk-through of the app.
+- `[CICD]` -> Dockerize the app
+- `[AUTH]` -> Add Google Provider Support support
+- `[AUTH]` -> Add Github Provider Support support
+- `[AUTH]` -> Add Microsoft Provider Support support
+
+---
+
 ## Dependencies
 
 - [Axios](https://axios-http.com/docs/intro) - HTTP Requests
 - [Lucid React](https://lucide.dev/guide/packages/lucide-react) - Icons
 - [NextJS/TypeScript](https://nextjs.org/) - App framework
+- [NextAuth](https://next-auth.js.org/) - Authentication
 - [React Hook Form](https://www.react-hook-form.com/) - Forms
   - [Hookform Resolvers](https://www.npmjs.com/package/@hookform/resolvers) - enables using zod for validation of form data.
     - [Resolver documentation](https://react-hook-form.com/docs/useform#resolver)
@@ -25,3 +38,4 @@ A simple example of a ticketing application written in NextJS/TypeScript.
   - [Select](https://ui.shadcn.com/docs/components/select)
 - [TailwindCSS](https://tailwindcss.com/) - Styles
 - [Zod](https://zod.dev/) - Schema validation
+
