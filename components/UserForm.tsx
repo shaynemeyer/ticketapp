@@ -47,7 +47,6 @@ const UserForm = ({ user }: Props) => {
       router.push("/users");
       router.refresh();
     } catch (error) {
-      console.log(error);
       setError("Unknown error occurred");
     } finally {
       setIsSubmitting(false);

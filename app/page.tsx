@@ -22,6 +22,13 @@ export default async function Dashboard() {
     },
   });
 
+  const data = groupTickets.map((item) => {
+    return {
+      name: item.status,
+      total: item._count.id,
+    };
+  });
+
   return (
     <div>
       <div className="grid gap-4 md:grid-cols-2 px-2">
@@ -29,7 +36,7 @@ export default async function Dashboard() {
           <DashRecentTickets tickets={tickets} />
         </div>
         <div>
-          <DashChart />
+          <DashChart data={data} />
         </div>
       </div>
     </div>

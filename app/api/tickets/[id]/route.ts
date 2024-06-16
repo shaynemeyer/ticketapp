@@ -14,7 +14,6 @@ export async function PATCH(request: NextRequest, { params }: Props) {
     return NextResponse.json(validation.error.format(), { status: 400 });
   }
 
-  console.log({ body, validation });
   const ticket = await prisma.ticket.findUnique({
     where: { id: parseInt(params.id) },
   });
