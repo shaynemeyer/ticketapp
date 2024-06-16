@@ -1,12 +1,55 @@
 # Ticket App
 
-A simple example of a ticketing application written in NextJS/TypeScript.
+A simple IT Ticketing application written in NextJS/TypeScript.
+
+---
+
+## Home page
+
+### Light Mode
+![](home-light.png)
+
+
+### Dark Mode
+![](home-dark.png)
+
+---
+
+## Tickets
+
+### Light Mode
+![](tickets-light.png)
+
+
+### Dark Mode
+![](tickets-dark.png)
+
+
+---
+
+## Features
+
+- Light/Dark Mode toggle
+- Graphs with Rechart
+- UI Components with Shadcn
+- User Authentication with NextAuth
+
+
+---
+
+## Tech Stack
+
+- NextJS/TypeScript
+- Shadcn
+- Prisma & Postgres 
+- Icons with Lucide React
+- TailwindCSS for styling
 
 ---
 
 ## TODOS
 
-- `[ISSUE]` -> fix issue with last user assigned still showing up as assigned in the Assign Ticket
+- `[ISSUE]` -> fix issue with last user assigned still showing up as assigned in the Assign Ticket field.
 - `[DOCS]` -> Add documentation and detailed walk-through of the app.
 - `[CICD]` -> Dockerize the app
 - `[AUTH]` -> Add Google Provider Support support
